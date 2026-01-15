@@ -14,6 +14,23 @@ import * as skillsCore from '../../lib/skills-core.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+/**
+ * @typedef {Object} OpenCodeClient
+ * @property {Object} session
+ * @property {Function} session.prompt
+ */
+
+/**
+ * @typedef {Object} PluginContext
+ * @property {OpenCodeClient} client - OpenCode API client
+ * @property {string} directory - Project directory path
+ */
+
+/**
+ * Superpowers plugin initialization function
+ * @param {PluginContext} context - Plugin context from OpenCode
+ * @returns {Promise<{tool: Object, event: Function}>} Plugin instance with tools and event handlers
+ */
 export const SuperpowersPlugin = async ({ client, directory }) => {
   const homeDir = os.homedir();
   const projectSkillsDir = path.join(directory, '.opencode/skills');
@@ -21,7 +38,11 @@ export const SuperpowersPlugin = async ({ client, directory }) => {
   const superpowersSkillsDir = path.resolve(__dirname, '../../skills');
   const personalSkillsDir = path.join(homeDir, '.config/opencode/skills');
 
-  // Helper to generate bootstrap content
+  /**
+   * Helper to generate bootstrap content
+   * @param {boolean} [compact=false] - Whether to use compact format to save tokens
+   * @returns {string|null} Bootstrap content or null if using-superpowers skill not found
+   */
   const getBootstrapContent = (compact = false) => {
     const usingSuperpowersPath = skillsCore.resolveSkillPath('using-superpowers', superpowersSkillsDir, personalSkillsDir);
     if (!usingSuperpowersPath) return null;
@@ -57,7 +78,12 @@ ${toolMapping}
 </EXTREMELY_IMPORTANT>`;
   };
 
-  // Helper to inject bootstrap via session.prompt
+  /**
+   * Helper to inject bootstrap via session.prompt
+   * @param {string} sessionID - The session ID to inject bootstrap into
+   * @param {boolean} [compact=false] - Whether to use compact format
+   * @returns {Promise<boolean>} True if injection succeeded, false otherwise
+   */
   const injectBootstrap = async (sessionID, compact = false) => {
     const bootstrapContent = getBootstrapContent(compact);
     if (!bootstrapContent) return false;
@@ -71,7 +97,7 @@ ${toolMapping}
         }
       });
       return true;
-    } catch (err) {
+    } catch (/** @type {unknown} */ err) {
       return false;
     }
   };
@@ -83,6 +109,11 @@ ${toolMapping}
         args: {
           skill_name: tool.schema.string().describe('Name of the skill to load (e.g., "superpowers:brainstorming", "my-custom-skill", or "project:my-skill")')
         },
+        /**
+         * @param {{skill_name: string}} args - Tool arguments
+         * @param {{sessionID: string}} context - Execution context
+         * @returns {Promise<string>} Success message or error
+         */
         execute: async (args, context) => {
           const { skill_name } = args;
 
@@ -137,7 +168,7 @@ ${toolMapping}
                 ]
               }
             });
-          } catch (err) {
+          } catch (/** @type {unknown} */ err) {
             // Fallback: return content directly if message insertion fails
             return `${skillHeader}\n\n${content}`;
           }
@@ -148,6 +179,11 @@ ${toolMapping}
       find_skills: tool({
         description: 'List all available skills in the project, personal, and superpowers skill libraries.',
         args: {},
+        /**
+         * @param {Record<string, never>} args - Tool arguments (empty)
+         * @param {{sessionID: string}} context - Execution context
+         * @returns {Promise<string>} Formatted list of available skills
+         */
         execute: async (args, context) => {
           const projectSkills = skillsCore.findSkillsInDir(projectSkillsDir, 'project', 3);
           const personalSkills = skillsCore.findSkillsInDir(personalSkillsDir, 'personal', 3);
@@ -187,8 +223,16 @@ ${toolMapping}
         }
       })
     },
+    /**
+     * Event handler for OpenCode session lifecycle events
+     * @param {{event: {type: string, properties?: {info?: {id?: string}, sessionID?: string}, session?: {id?: string}}}} params - Event parameters
+     * @returns {Promise<void>}
+     */
     event: async ({ event }) => {
-      // Extract sessionID from various event structures
+      /**
+       * Extract sessionID from various event structures
+       * @returns {string|undefined} Session ID if found
+       */
       const getSessionID = () => {
         return event.properties?.info?.id ||
                event.properties?.sessionID ||
