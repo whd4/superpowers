@@ -1,19 +1,19 @@
 {
-  "name": "superpowers-dev",
-  "description": "Development marketplace for Superpowers core skills library",
+  "name": "henry-ai-os",
+  "description": "HENRY AI OS — autonomous AI operating system with 9 expert agents, built on Superpowers",
   "owner": {
-    "name": "Jesse Vincent",
-    "email": "jesse@fsck.com"
+    "name": "HENRY AI Corporation",
+    "url": "https://github.com/whd4"
   },
   "plugins": [
     {
       "name": "superpowers",
-      "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+      "description": "HENRY AI OS: autonomous CEO operating system with expert-level agents for strategy, finance, engineering, legal, research, marketing, sales, and operations — plus 2-click project launch and executable decision tools",
       "version": "3.6.2",
       "source": "./",
       "author": {
-        "name": "Jesse Vincent",
-        "email": "jesse@fsck.com"
+        "name": "HENRY AI Corporation",
+        "url": "https://github.com/whd4"
       }
     }
   ]

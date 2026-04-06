@@ -1,13 +1,13 @@
 {
   "name": "superpowers",
-  "description": "Core skills library for Claude Code: TDD, debugging, collaboration patterns, and proven techniques",
+  "description": "HENRY AI OS: autonomous CEO operating system with 9 expert agents, 8 executable scripts, 2-click project launch — built on Superpowers",
   "version": "3.6.2",
   "author": {
-    "name": "Jesse Vincent",
-    "email": "jesse@fsck.com"
+    "name": "HENRY AI Corporation",
+    "url": "https://github.com/whd4"
   },
-  "homepage": "https://github.com/obra/superpowers",
-  "repository": "https://github.com/obra/superpowers",
+  "homepage": "https://github.com/whd4/superpowers",
+  "repository": "https://github.com/whd4/superpowers",
   "license": "MIT",
-  "keywords": ["skills", "tdd", "debugging", "collaboration", "best-practices", "workflows"]
+  "keywords": ["skills", "henry-ai", "agents", "acquisition", "agency", "mcp", "autonomous", "best-practices"]
 }
