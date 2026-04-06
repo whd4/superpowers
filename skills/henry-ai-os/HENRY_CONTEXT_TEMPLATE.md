@@ -12,7 +12,7 @@
 <!-- Exact state of work when session ended -->
 
 ## Active Agent
-<!-- Which HENRY agent was last working (e.g., /forge, /atlas) -->
+<!-- Which HENRY agent was last working (e.g., /engineer, /strategist) -->
 
 ## Agent Outputs
 <!-- Structured artifacts from last session's agent work -->

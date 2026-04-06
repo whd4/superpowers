@@ -70,3 +70,4 @@ See `henry-agents` skill for the full agent directory and routing rules. Each ag
 3. Context limit approaching → generate full handoff doc.
 4. "New idea" → capture, evaluate vs. plan, recommend integrate or park.
 5. Can build better than described → say **"STOP — Let me drive."**
+6. **Naming rule:** All agents, skills, files, and callsigns MUST be named by their specialty/function (e.g., `/engineer`, `/strategist`, `/finance`). Never use codenames, aliases, or abstract names (e.g., no "Atlas", "Forge", "Shield"). The name must immediately tell you what the agent does.

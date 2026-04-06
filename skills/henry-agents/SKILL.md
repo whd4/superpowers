@@ -1,6 +1,6 @@
 ---
 name: henry-agents
-description: Use when routing tasks to HENRY AI agents by callsign — maps /nexus, /atlas, /ledger, /forge, /shield, /oracle, /pulse, /closer, /engine to their domain-specific agent files with routing rules and handoff protocol
+description: Use when routing tasks to HENRY AI agents by callsign — maps /orchestrator, /strategist, /finance, /engineer, /legal, /researcher, /marketing, /sales, /operations to their domain-specific agent files with routing rules and handoff protocol
 ---
 
 # HENRY Agent Routing Index
@@ -9,22 +9,22 @@ description: Use when routing tasks to HENRY AI agents by callsign — maps /nex
 
 | Callsign | Domain | Agent File | Use When |
 |----------|--------|------------|----------|
-| `/nexus` | Orchestrator | `agents/henry-nexus.md` | Task spans 3+ domains, needs sequencing or parallel dispatch |
-| `/atlas` | Strategy | `agents/henry-atlas.md` | Acquisitions, partnerships, market entry, competitive positioning |
-| `/ledger` | Finance | `agents/henry-ledger.md` | Valuations, SBA loans, unit economics, cash flow, financial models |
-| `/forge` | Engineering | `agents/henry-forge.md` | Code, MCP servers, architecture, deployments, debugging |
-| `/shield` | Legal | `agents/henry-shield.md` | LOIs, NDAs, contracts, compliance, risk assessment |
-| `/oracle` | Research | `agents/henry-oracle.md` | Due diligence, market intel, competitive analysis, sourcing |
-| `/pulse` | Marketing | `agents/henry-pulse.md` | GTM, content, SEO, brand, campaigns, lead gen |
-| `/closer` | Sales | `agents/henry-closer.md` | Proposals, pitches, outreach sequences, pipeline, closing |
-| `/engine` | Operations | `agents/henry-engine.md` | Sprint planning, execution tracking, workflows, capacity |
+| `/orchestrator` | Orchestrator | `agents/henry-orchestrator.md` | Task spans 3+ domains, needs sequencing or parallel dispatch |
+| `/strategist` | Strategy | `agents/henry-strategist.md` | Acquisitions, partnerships, market entry, competitive positioning |
+| `/finance` | Finance | `agents/henry-finance.md` | Valuations, SBA loans, unit economics, cash flow, financial models |
+| `/engineer` | Engineering | `agents/henry-engineer.md` | Code, MCP servers, architecture, deployments, debugging |
+| `/legal` | Legal | `agents/henry-legal.md` | LOIs, NDAs, contracts, compliance, risk assessment |
+| `/researcher` | Research | `agents/henry-researcher.md` | Due diligence, market intel, competitive analysis, sourcing |
+| `/marketing` | Marketing | `agents/henry-marketing.md` | GTM, content, SEO, brand, campaigns, lead gen |
+| `/sales` | Sales | `agents/henry-sales.md` | Proposals, pitches, outreach sequences, pipeline, closing |
+| `/operations` | Operations | `agents/henry-operations.md` | Sprint planning, execution tracking, workflows, capacity |
 
 ## Routing Rules
 
 1. **Single domain** → Route directly to matching agent
 2. **Two domains** → Lead agent owns delivery, consults second agent
-3. **Three+ domains** → Route through `/nexus` for orchestration
-4. **Unclear domain** → Default to `/nexus` for triage
+3. **Three+ domains** → Route through `/orchestrator` for orchestration
+4. **Unclear domain** → Default to `/orchestrator` for triage
 5. **Codeword received** → Execute immediately per codeword protocol (see henry-ai-os skill), do not route
 
 ## Handoff Protocol
