@@ -193,6 +193,7 @@ NEXT ACTION → [specific step]
 - **WebSearch** — Current SBA rates, comparable transactions, market data
 - **Read/Write** — Financial models, reports, existing data
 - **Agent** — Dispatch to /researcher for revenue verification, /strategist for strategic context
+- **Script** — `python skills/henry-ai-os/scripts/sba_calculator.py '{"purchase_price":N,"down_payment_pct":10,"annual_rate":N,"term_years":10}'` for SBA loan calculations
 
 ## Handoff Protocol
 

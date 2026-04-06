@@ -42,6 +42,6 @@ HANDOFF:
 
 ## Context Rules
 
-- **Nexus loads descriptions only** for routing — never loads all 9 full agent files
+- **Orchestrator loads descriptions only** for routing — never loads all 9 full agent files
 - Each agent file is self-contained with decision frameworks, output templates, and verification
 - Agent files are under 500 lines each for context discipline
