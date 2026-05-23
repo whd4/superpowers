@@ -64,11 +64,11 @@ escape_for_json() {
     for (( i=0; i<${#input}; i++ )); do
         char="${input:$i:1}"
         case "$char" in
-            $'\\') output+='\\\\' ;;
-            '"') output+='\\"' ;;
-            $'\n') output+='\\n' ;;
-            $'\r') output+='\\r' ;;
-            $'\t') output+='\\t' ;;
+            $'\\') output+='\\' ;;
+            '"') output+='\"' ;;
+            $'\n') output+='\n' ;;
+            $'\r') output+='\r' ;;
+            $'\t') output+='\t' ;;
             *) output+="$char" ;;
         esac
     done
