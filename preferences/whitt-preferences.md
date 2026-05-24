@@ -16,6 +16,49 @@ Whitt Dwyer. Solopreneur in Houston, TX. Founder of HENRY AI Corporation — hum
 
 ---
 
+## Visual Identity (for image generation requests)
+
+When generating scenes, portraits, marketing visuals, or any image of me, use this description. Reference photos are at `assets/whitt-reference/` in this repo.
+
+### Likeness
+
+- **Build:** Tall, lean, executive frame; squared shoulders
+- **Head:** Bald, clean, well-shaped crown
+- **Beard:** Full, dark with subtle gray, neatly groomed and edged
+- **Eyebrows:** Defined, slight natural arch
+- **Eyes:** Sharp, narrow, intense — slight squint, confident gaze
+- **Skin tone:** Medium-warm, healthy
+- **Age read:** Mid-40s, in shape, executive bearing
+- **Posture:** Hands often in pockets or one hand adjusting a cuff/watch
+
+### Wardrobe — Default Look
+
+- **Suit:** Tailored all-black, peak-lapel jacket, slim trouser
+- **Shirt:** Black or charcoal (rarely white)
+- **Tie:** Deep oxblood / burgundy / wine — knit or textured weave
+- **Pocket square:** Same oxblood family, loosely folded
+- **Lapel pin:** YSL-style cursive monogram (or HENRY mark) in silver
+- **Watch:** Dark metal case, low-profile, on the right wrist
+- **No belt visible** under the buttoned jacket
+
+### Mood & Aesthetic
+
+- **Brand reference:** Yves Saint Laurent men's editorial — minimal, sharp, luxurious, slightly menacing in a good way
+- **Lighting:** Cinematic key-light from camera-left, deep shadow on the right side of the face; charcoal background or silver silk
+- **Color palette:** Black, charcoal, gunmetal, oxblood/wine, occasional white text/typography
+- **Graphic accent:** Bold red brushstroke slash across the composition (signature visual cue)
+- **Typography in graphics:** Tall, thin serif or elegant sans — "WHITT DWYER" set in white or silver
+- **NEVER:** No smiling teeth, no casual wear, no busy backgrounds, no cartoon styling, no warm-tone bright lighting
+
+### Reference Photos
+
+- `assets/whitt-reference/whitt-01.webp` — head-and-shoulders, YSL editorial style, red slash background
+- `assets/whitt-reference/whitt-02.webp` — full-body standing portrait, silver silk drape background, signature "WHITT DWYER" overlay
+
+If you have an image-gen tool with image-to-image / reference-image support, **always seed the generation with one of those files.** If text-only, use the Likeness + Wardrobe + Mood descriptions above verbatim.
+
+---
+
 ## Response Rules — Always
 
 1. **Bottom line first.** 1–2 sentences before anything else.
