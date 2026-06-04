@@ -1,10 +1,16 @@
 # HENRY AI — Operational State
 
-> Last updated: 2026-03-16
-> Session: Initial setup
+> Last updated: 2026-06-04
+> Session: Infrastructure consolidation + security cleanup
+> **Latest handoff: `SESSION-HANDOFF-2026-06-04.md` — read it first.**
 
 ## Current Focus
-Setting up HENRY AI OS infrastructure in the superpowers repo.
+Infra cleanup is **done and green**. Open: (1) Whitt revokes 2 GitHub PATs, (2) pick ONE home surface (VS Code vs Claude Desktop) to end the 4-agent collision + resolve the graph owner, (3) start **Dwyer Interiors case study #0**.
+
+## Boot Sequence
+1. Read the most-recent `SESSION-HANDOFF-*.md` (currently 2026-06-04).
+2. Run anti-drift check; verify live systems via `wsl.exe` (Hermes PID 190025, trading PID 197).
+3. Orient Whitt per the handoff's "NEXT SESSION STARTS WITH".
 
 ## Active Projects
 
@@ -56,15 +62,22 @@ Setting up HENRY AI OS infrastructure in the superpowers repo.
 - Ralph security loop plugin active
 
 ## Open Tasks
-- [ ] Complete HENRY AI OS setup in superpowers repo
-- [ ] Configure agent roster with full skill definitions
-- [ ] Set up automated workflows for agency track
-- [ ] Build acquisition pipeline automation
+- [ ] **Whitt:** revoke 2 GitHub PATs (`ghp_D3VS…`, `ghp_5yAH…`) at github.com/settings/tokens — only externally-exposed creds
+- [ ] **Whitt:** pick home surface — VS Code or Claude Desktop (resolves graph owner + 4-agent collision)
+- [ ] Collapse to ONE driver (close Codex, retire/demote extra Claudes)
+- [ ] Set OneDrive "Always keep on this device" for dev folders + Claude install (stops 253MB hydration downloads)
+- [ ] **Start Dwyer Interiors case study #0** (YC Screen → PAI → agents → G-Stack)
+- [ ] Private remote backup of scrubbed vault
+- [ ] Check GitHub billing (flagged red)
 
 ## Decision Log
 | Date | Decision | Rationale |
 |------|----------|-----------|
 | 2026-03-16 | Set up HENRY OS in superpowers repo | Leverage existing skills framework for agent orchestration |
+| 2026-06-04 | Vault history scrubbed of all secrets, quarantined originals offline | Capture pipeline leaked 9 .env dupes into git; .gitignore gap fixed |
+| 2026-06-04 | Rotation list = 2 GitHub PATs only (NOT the stale "4 keys") | Anthropic dead (OAuth), FAL live-but-local; only PATs externally exposed |
+| 2026-06-04 | One driver owns shared state (vault/handoff/Hermes) | Multiple concurrent agents caused drift, lock fights, duplicate notes |
+| 2026-06-04 | Graph lives wherever the orchestrator lives | Kuzu single-writer; resolves once Whitt picks home surface |
 
 ## Notes
 - Update this file at the end of every session
