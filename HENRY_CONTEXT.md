@@ -3,6 +3,7 @@
 > Last updated: 2026-06-04
 > Session: Infrastructure consolidation + security cleanup
 > **Latest handoff: `SESSION-HANDOFF-2026-06-04.md` — read it first.**
+> **Architecture: `CLOUD-VS-LOCAL-MAP.md` — which Claude (cloud vs local) can do what.**
 
 ## Current Focus
 Infra cleanup is **done and green**. Open: (1) Whitt revokes 2 GitHub PATs, (2) pick ONE home surface (VS Code vs Claude Desktop) to end the 4-agent collision + resolve the graph owner, (3) start **Dwyer Interiors case study #0**.
